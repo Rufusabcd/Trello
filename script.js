@@ -1,4 +1,4 @@
-$function(){
+
     function randomString() {
         var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
         var str = '';
@@ -23,11 +23,16 @@ $function(){
         };
         function Card(description) {
             var self = this;
+            this.id = randomString();
+            this.description = description;
+            this.$element = createCard(); //
         
-        this.id = randomString();
-        this.description = description;
-        this.$element = createCard(); //
-        
+            Card.prototype = {
+                removeCard: function() {
+                    this.$element.remove();
+            }
+            }
+
         function createCard() {
                 var $card = $('<li>').addClass('card');
                 var $cardDescription = $('<p>').addClass('card-description').text(self.description);
@@ -43,11 +48,7 @@ $function(){
                 }
         }
         }
-        Card.prototype = {
-            removeCard: function() {
-                this.$element.remove();
-        }
-        }
+
     
         function createColumn() {
             var self = this;
@@ -78,7 +79,6 @@ $function(){
        
         return $column;
         }
-      }
       var board = {
         name: 'Kanban Board',
         addColumn: function(column) {
@@ -93,8 +93,7 @@ $function(){
           placeholder: 'card-placeholder'
         }).disableSelection();
       }
-      });
-});
+
 var todoColumn = new Column('To do');
 var doingColumn = new Column('Doing');
 var doneColumn = new Column('Done');
