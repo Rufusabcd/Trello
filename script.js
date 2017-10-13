@@ -1,4 +1,4 @@
-$(function() {
+
     function randomString() {
         var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
         var str = '';
@@ -29,8 +29,6 @@ $(function() {
                 .append($columnDelete)
                 .append($columnAddCard)
                 .append($columnCardList);
-        
-        
             return $column;
         }
 
@@ -84,9 +82,10 @@ $(function() {
           $('.create-column')
           .click(function(){
             var name = prompt('Enter a column name');
-            var column = new Column(name);
+            var Column = new Column(name);
                 board.addColumn(column);
           });
+  
 
      
         var todoColumn = new Column('To do');
