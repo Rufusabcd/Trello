@@ -1,4 +1,10 @@
 
+    var table = {name: 'project', element: $('div') };
+
+    var column = {id: randomString(), name, element: createColumn() };
+        
+    var card = {id: randomString(), description, color: 'green', element: createCard() };
+    
     function randomString() {
         var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
         var str = '';
@@ -7,6 +13,13 @@
         }
         return str;
     }
+
+    function Column(name) {
+        var self = this;
+    
+        this.id = randomString();
+        this.name = name;
+        this.$element = createColumn();
 
     function createColumn() {
         
@@ -31,7 +44,7 @@
                 .append($columnCardList);
             return $column;
         }
-
+    }
         Column.prototype = {
             addCard: function(card) {
               this.$element.children('ul').append(card.$element);
@@ -40,6 +53,13 @@
               this.$element.remove();
             }
         };
+
+        function Card(description) {
+            var self = this;
+        
+        this.id = randomString();
+        this.description = description;
+        this.$element = createCard();
 
         function createCard() {
             
@@ -58,7 +78,7 @@
         
                 return $card;
         }
-
+    }
         Card.prototype = {
             removeCard: function() {
                 this.$element.remove();
