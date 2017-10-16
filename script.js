@@ -1,10 +1,4 @@
 
-    var table = {name: 'project', element: $('div') };
-
-    var column = {id: randomString(), name, element: createColumn() };
-        
-    var card = {id: randomString(), description, color: 'green', element: createCard() };
-    
     function randomString() {
         var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
         var str = '';
