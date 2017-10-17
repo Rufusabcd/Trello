@@ -96,7 +96,7 @@
           $('.create-column')
           .click(function(){
             var name = prompt('Enter a column name');
-            var Column = new Column(name);
+            var column = new Column(name);
                 board.addColumn(column);
           });
   
