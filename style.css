@@ -37,5 +37,5 @@ button {
     box-shadow: 0 9px #34495e;
 }
 .column-card-list {
-    min-height: 5px;
+    min-height: 15px;
 }
