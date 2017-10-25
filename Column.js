@@ -4,13 +4,6 @@ function Column(id, name) {
 }
 
 
-function Column(name) {
-	var self = this;
-	
-	this.id = randomString();
-	this.name = name;
-	this.element = createColumn();
-
 	function createColumn() {
 		// TWORZENIE NOWYCH WĘZŁÓW
 		var column = $('<div class="column"></div>');
@@ -48,7 +41,7 @@ function Column(name) {
 			.append(columnCardList);
 			return column;
 		}
-	}
+	
 Column.prototype = {
 	createCard: function(card) {
 	  this.element.children('ul').append(card.element);

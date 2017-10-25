@@ -4,6 +4,11 @@ var myHeaders = {
   'X-Auth-Token': 'X-Auth-Token'
 };
 
+function Column(id, name) {
+  this.id = id;
+  this.name = name || 'No name given';
+}
+
 $.ajaxSetup({
 	headers: myHeaders
 });

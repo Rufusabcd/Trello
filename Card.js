@@ -3,7 +3,6 @@ function Card(id, name) {
 	var self = this;
 	
 	this.id = id;
-	this.description = description;
     this.element = createCard();
     this.name = name || "No name given"
 
