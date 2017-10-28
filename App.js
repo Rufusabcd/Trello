@@ -8,11 +8,6 @@ $.ajaxSetup({
 	headers: myHeaders
 });
 
-function Column(id, name) {
-  this.id = id;
-  this.name = name || 'No name given';
-}
-
 $.ajax({
     url: baseUrl + '/board',
     method: 'GET',
@@ -35,11 +30,3 @@ function setupCards(col, cards) {
     	col.createCard(card);
   	})
 }
-Column.prototype = {
-	createCard: function(card) {
-	  this.element.children('ul').append(card.element);
-	},
-	deleteColumn: function() {
-	  this.element.remove();
-  }
-};

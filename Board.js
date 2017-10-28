@@ -7,11 +7,6 @@ var board = {
 	element: $('#board .column-container')
 };
 
-$('.create-column').click(function() {
-	var columnName = prompt('Enter a column name');
-	board.createColumn(new Column(columnName));
-});
-
 $('.create-column')
 .click(function() {
     var columnName = prompt('Enter a column name');
