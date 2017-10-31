@@ -1,6 +1,7 @@
 function Column(id, name) {
     this.id = id;
     this.name = name
+    this.$element = createColumn();
 }
 
 
